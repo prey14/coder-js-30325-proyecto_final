@@ -5,7 +5,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "100000",
-        "img": "/img/productos/MicroP1.jpeg"
+        "img": "./img/productos/MicroP1.jpeg"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "90000", 
-        "img": "/img/productos/MicroP2.jpeg"
+        "img": "./img/productos/MicroP2.jpeg"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "80000", 
-        "img": "/img/productos/MicroP3.jpeg"
+        "img": "./img/productos/MicroP3.jpeg"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "70000", 
-        "img": "/img/productos/MicroP4.jpeg"
+        "img": "./img/productos/MicroP4.jpeg"
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "60000", 
-        "img": "/img/productos/MicroP5.jpeg"
+        "img": "./img/productos/MicroP5.jpeg"
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "50000", 
-        "img": "/img/productos/MicroP6.jpeg"
+        "img": "./img/productos/MicroP6.jpeg"
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "40000", 
-        "img": "/img/productos/MicroP7.jpeg"
+        "img": "./img/productos/MicroP7.jpeg"
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "30000", 
-        "img": "/img/productos/MicroP8.jpeg"
+        "img": "./img/productos/MicroP8.jpeg"
     },
     {
         "id": 9,
@@ -69,7 +69,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "20000", 
-        "img": "/img/productos/MicroP9.jpeg"
+        "img": "./img/productos/MicroP9.jpeg"
     },
     {
         "id": 10,
@@ -77,7 +77,7 @@
         "tipo": "Procesador",
         "info": "Descripción del producto...",
         "precio": "10000",
-        "img": "/img/productos/MicroP10.jpeg"
+        "img": "./img/productos/MicroP10.jpeg"
     },
 
     {
@@ -86,7 +86,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "100000",
-        "img": "/img/productos/Mother1.jpeg"
+        "img": "./img/productos/Mother1.jpeg"
     },
     {
         "id": 12,
@@ -94,7 +94,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "90000",
-        "img": "/img/productos/Mother2.jpeg"
+        "img": "./img/productos/Mother2.jpeg"
     },
     {
         "id": 13,
@@ -102,7 +102,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "80000",
-        "img": "/img/productos/Mother3.jpeg"
+        "img": "./img/productos/Mother3.jpeg"
     },
     {
         "id": 14,
@@ -110,7 +110,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "70000",
-        "img": "/img/productos/Mother4.jpeg"
+        "img": "./img/productos/Mother4.jpeg"
     },
     {
         "id": 15,
@@ -118,7 +118,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "60000",
-        "img": "/img/productos/Mother5.jpeg"
+        "img": "./img/productos/Mother5.jpeg"
     },
     {
         "id": 16,
@@ -126,7 +126,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "50000",
-        "img": "/img/productos/Mother6.jpeg"
+        "img": "./img/productos/Mother6.jpeg"
     },
     {
         "id": 17,
@@ -134,7 +134,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "40000",
-        "img": "/img/productos/Mother7.jpeg"
+        "img": "./img/productos/Mother7.jpeg"
     },
     {
         "id": 18,
@@ -142,7 +142,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "30000",
-        "img": "/img/productos/Mother8.jpeg"
+        "img": "./img/productos/Mother8.jpeg"
     },
     {
         "id": 19,
@@ -150,7 +150,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "20000",
-        "img": "/img/productos/Mother9.jpeg"
+        "img": "./img/productos/Mother9.jpeg"
     },
     {
         "id": 20,
@@ -158,7 +158,7 @@
         "tipo": "Motherboard",
         "info": "Descripción del producto...",
         "precio": "10000",
-        "img": "/img/productos/Mother10.jpeg"
+        "img": "./img/productos/Mother10.jpeg"
     },
 
     {
@@ -167,7 +167,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "100000",
-        "img": "/img/productos/RAM1.jpeg"
+        "img": "./img/productos/RAM1.jpeg"
     },
     {
         "id": 22,
@@ -175,7 +175,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "90000",
-        "img": "/img/productos/RAM2.jpeg"
+        "img": "./img/productos/RAM2.jpeg"
     },
     {
         "id": 23,
@@ -183,7 +183,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "80000",
-        "img": "/img/productos/RAM3.jpeg"
+        "img": "./img/productos/RAM3.jpeg"
     },
     {
         "id": 24,
@@ -191,7 +191,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "70000",
-        "img": "/img/productos/RAM4.jpeg"
+        "img": "./img/productos/RAM4.jpeg"
     },
     {
         "id": 25,
@@ -199,7 +199,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "60000",
-        "img": "/img/productos/RAM5.jpeg"
+        "img": "./img/productos/RAM5.jpeg"
     },
     {
         "id": 26,
@@ -207,7 +207,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "50000",
-        "img": "/img/productos/RAM6.jpeg"
+        "img": "./img/productos/RAM6.jpeg"
     },
     {
         "id": 27,
@@ -215,7 +215,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "40000",
-        "img": "/img/productos/RAM7.jpeg"
+        "img": "./img/productos/RAM7.jpeg"
     },
     {
         "id": 28,
@@ -223,7 +223,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "30000",
-        "img": "/img/productos/RAM8.jpeg"
+        "img": "./img/productos/RAM8.jpeg"
     },
     {
         "id": 29,
@@ -231,7 +231,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "20000",
-        "img": "/img/productos/RAM9.jpeg"
+        "img": "./img/productos/RAM9.jpeg"
     },
     {
         "id": 30,
@@ -239,7 +239,7 @@
         "tipo": "Memoria RAM",
         "info": "Descripción del producto...",
         "precio": "10000",
-        "img": "/img/productos/RAM10.jpeg"
+        "img": "./img/productos/RAM10.jpeg"
     },
 
     {
@@ -248,7 +248,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "100000",
-        "img": "/img/productos/PlacaVideo1.jpeg"
+        "img": "./img/productos/PlacaVideo1.jpeg"
     },
     {
         "id": 32,
@@ -256,7 +256,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "90000",
-        "img": "/img/productos/PlacaVideo2.jpeg"
+        "img": "./img/productos/PlacaVideo2.jpeg"
     },
     {
         "id": 33,
@@ -264,7 +264,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "80000",
-        "img": "/img/productos/PlacaVideo3.jpeg"
+        "img": "./img/productos/PlacaVideo3.jpeg"
     },
     {
         "id": 34,
@@ -272,7 +272,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "70000",
-        "img": "/img/productos/PlacaVideo4.jpeg"
+        "img": "./img/productos/PlacaVideo4.jpeg"
     },
     {
         "id": 35,
@@ -280,7 +280,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "60000",
-        "img": "/img/productos/PlacaVideo5.jpeg"
+        "img": "./img/productos/PlacaVideo5.jpeg"
     },
     {
         "id": 36,
@@ -288,7 +288,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "50000",
-        "img": "/img/productos/PlacaVideo6.jpeg"
+        "img": "./img/productos/PlacaVideo6.jpeg"
     },
     {
         "id": 37,
@@ -296,7 +296,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "40000",
-        "img": "/img/productos/PlacaVideo7.jpeg"
+        "img": "./img/productos/PlacaVideo7.jpeg"
     },
     {
         "id": 38,
@@ -304,7 +304,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "30000",
-        "img": "/img/productos/PlacaVideo8.jpeg"
+        "img": "./img/productos/PlacaVideo8.jpeg"
     },
     {
         "id": 39,
@@ -312,7 +312,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "20000",
-        "img": "/img/productos/PlacaVideo9.jpeg"
+        "img": "./img/productos/PlacaVideo9.jpeg"
     },
     {
         "id": 40,
@@ -320,7 +320,7 @@
         "tipo": "Placa de Video",
         "info": "Descripción del producto...",
         "precio": "10000",
-        "img": "/img/productos/PlacaVideo10.jpeg"
+        "img": "./img/productos/PlacaVideo10.jpeg"
     },
 
     {
@@ -329,7 +329,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "100000",
-        "img": "/img/productos/Almacenamiento1.jpeg"
+        "img": "./img/productos/Almacenamiento1.jpeg"
     },
     {
         "id": 42,
@@ -337,7 +337,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "90000",
-        "img": "/img/productos/Almacenamiento2.jpeg"
+        "img": "./img/productos/Almacenamiento2.jpeg"
     },
     {
         "id": 43,
@@ -345,7 +345,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "80000",
-        "img": "/img/productos/Almacenamiento3.jpeg"
+        "img": "./img/productos/Almacenamiento3.jpeg"
     },
     {
         "id": 44,
@@ -353,7 +353,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "70000",
-        "img": "/img/productos/Almacenamiento4.jpeg"
+        "img": "./img/productos/Almacenamiento4.jpeg"
     },
     {
         "id": 45,
@@ -361,7 +361,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "60000",
-        "img": "/img/productos/Almacenamiento5.jpeg"
+        "img": "./img/productos/Almacenamiento5.jpeg"
     },
     {
         "id": 46,
@@ -369,7 +369,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "50000",
-        "img": "/img/productos/Almacenamiento6.jpeg"
+        "img": "./img/productos/Almacenamiento6.jpeg"
     },
     {
         "id": 47,
@@ -377,7 +377,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "40000",
-        "img": "/img/productos/Almacenamiento7.jpeg"
+        "img": "./img/productos/Almacenamiento7.jpeg"
     },
     {
         "id": 48,
@@ -385,7 +385,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "30000",
-        "img": "/img/productos/Almacenamiento8.jpeg"
+        "img": "./img/productos/Almacenamiento8.jpeg"
     },
     {
         "id": 49,
@@ -393,7 +393,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "20000",
-        "img": "/img/productos/Almacenamiento9.jpeg"
+        "img": "./img/productos/Almacenamiento9.jpeg"
     },
     {
         "id": 50,
@@ -401,7 +401,7 @@
         "tipo": "Almacenamiento",
         "info": "Descripción del producto...",
         "precio": "10000",
-        "img": "/img/productos/Almacenamiento10.jpeg"
+        "img": "./img/productos/Almacenamiento10.jpeg"
     },
 
     {
@@ -410,7 +410,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "100000",
-        "img": "/img/productos/Fuente1.jpeg"
+        "img": "./img/productos/Fuente1.jpeg"
     },
     {
         "id": 52,
@@ -418,7 +418,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "90000",
-        "img": "/img/productos/Fuente2.jpeg"
+        "img": "./img/productos/Fuente2.jpeg"
     },
     {
         "id": 53,
@@ -426,7 +426,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "80000",
-        "img": "/img/productos/Fuente3.jpeg"
+        "img": "./img/productos/Fuente3.jpeg"
     },
     {
         "id": 54,
@@ -434,7 +434,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "70000",
-        "img": "/img/productos/Fuente4.jpeg"
+        "img": "./img/productos/Fuente4.jpeg"
     },
     {
         "id": 55,
@@ -442,7 +442,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "60000",
-        "img": "/img/productos/Fuente5.jpeg"
+        "img": "./img/productos/Fuente5.jpeg"
     },
     {
         "id": 56,
@@ -450,7 +450,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "50000",
-        "img": "/img/productos/Fuente6.jpeg"
+        "img": "./img/productos/Fuente6.jpeg"
     },
     {
         "id": 57,
@@ -458,7 +458,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "40000",
-        "img": "/img/productos/Fuente7.jpeg"
+        "img": "./img/productos/Fuente7.jpeg"
     },
     {
         "id": 58,
@@ -466,7 +466,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "30000",
-        "img": "/img/productos/Fuente8.jpeg"
+        "img": "./img/productos/Fuente8.jpeg"
     },
     {
         "id": 59,
@@ -474,7 +474,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "20000",
-        "img": "/img/productos/Fuente9.jpeg"
+        "img": "./img/productos/Fuente9.jpeg"
     },
     {
         "id": 60,
@@ -482,7 +482,7 @@
         "tipo": "Fuente de alimentacion",
         "info": "Descripción del producto...",
         "precio": "10000",
-        "img": "/img/productos/Fuente10.jpeg"
+        "img": "./img/productos/Fuente10.jpeg"
     },
 
     {
@@ -491,7 +491,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "100000",
-        "img": "/img/productos/Gabinete1.jpeg"
+        "img": "./img/productos/Gabinete1.jpeg"
     },
     {
         "id": 62,
@@ -499,7 +499,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "90000",
-        "img": "/img/productos/Gabinete2.jpeg"
+        "img": "./img/productos/Gabinete2.jpeg"
     },
     {
         "id": 63,
@@ -507,7 +507,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "80000",
-        "img": "/img/productos/Gabinete3.jpeg"
+        "img": "./img/productos/Gabinete3.jpeg"
     },
     {
         "id": 64,
@@ -515,7 +515,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "70000",
-        "img": "/img/productos/Gabinete4.jpeg"
+        "img": "./img/productos/Gabinete4.jpeg"
     },
     {
         "id": 65,
@@ -523,7 +523,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "60000",
-        "img": "/img/productos/Gabinete5.jpeg"
+        "img": "./img/productos/Gabinete5.jpeg"
     },
     {
         "id": 66,
@@ -531,7 +531,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "50000",
-        "img": "/img/productos/Gabinete6.jpeg"
+        "img": "./img/productos/Gabinete6.jpeg"
     },
     {
         "id": 67,
@@ -539,7 +539,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "40000",
-        "img": "/img/productos/Gabinete7.jpeg"
+        "img": "./img/productos/Gabinete7.jpeg"
     },
     {
         "id": 68,
@@ -547,7 +547,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "30000",
-        "img": "/img/productos/Gabinete8.jpeg"
+        "img": "./img/productos/Gabinete8.jpeg"
     },
     {
         "id": 69,
@@ -555,7 +555,7 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "20000",
-        "img": "/img/productos/Gabinete9.jpeg"
+        "img": "./img/productos/Gabinete9.jpeg"
     },
     {
         "id": 70,
@@ -563,6 +563,6 @@
         "tipo": "Gabinete",
         "info": "Descripción del producto...",
         "precio": "10000",
-        "img": "/img/productos/Gabinete10.jpeg"
+        "img": "./img/productos/Gabinete10.jpeg"
     }
 ]

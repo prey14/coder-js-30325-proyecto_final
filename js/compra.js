@@ -196,6 +196,7 @@ let terminosYcondiciones1 = document.querySelector("#terminosYcondiciones1");
 let terminosYcondiciones2 = document.querySelector("#terminosYcondiciones2");
 
 
+
 function mostrarRegistrarse(input){
     if(input.value == "Registrarse") {
         registrarse.style.display="block";
@@ -237,7 +238,6 @@ function nuevoUsuario (val){
     const persona = {nombre,apellido,dni,correo,domicilio,cp};
 
     arrayPersonas.push(persona);
-
     localStorage.setItem("arrayPersonas", JSON.stringify(arrayPersonas));
 
     btnRegistrarse.disabled = true;
@@ -263,12 +263,16 @@ function nuevoUsuario (val){
 function buscarUsuario(val){
     val.preventDefault();
 
+    const arrayEjemplo = {nombre: "Pablo", apellido: "Rey", dni: 09122018, correo: "pablo@gmail.com", domicilio: "CABA", cp: "1406"};
+    arrayPersonas.push(arrayEjemplo);
+    localStorage.setItem("arrayPersonas", JSON.stringify(arrayPersonas));
+    
     const dniBuscar = document.querySelector("#dniBuscar").value;
     const arrayParaBuscar = JSON.parse(localStorage.getItem("arrayPersonas"));
     const resultadoBuscar = arrayParaBuscar.find(person => person.dni == dniBuscar);
 
     let textoPersonaEncontrada;
-    if (resultadoBuscar != undefined){
+    if (resultadoBuscar != undefined || resultadoBuscar != null){
         textoPersonaEncontrada = `
             <h2>${resultadoBuscar.nombre} ${resultadoBuscar.apellido}</h2>
         `;
@@ -281,7 +285,7 @@ function buscarUsuario(val){
 document.querySelector("#btnBuscarUsuario").addEventListener("click", buscarUsuario);
 
 
-// //! Si quisiera borrar los usuarios lo haría llamando a este botoncito
+//! Este botón lo dejé por si quisiera borrar más facilmente los usuarios del localStorage
 // document.querySelector("#borrarPersonas").addEventListener("click", ()=>{
 //     localStorage.removeItem("arrayPersonas");
 // })

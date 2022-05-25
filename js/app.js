@@ -13,7 +13,6 @@ let carritoDeCompras = [];
 
 let stockGlobal = []; //Esta es la variable global del Fetch
 
-
 const stockFetch = async () => {
     try {
         const res = await fetch ("./js/stock.json")
