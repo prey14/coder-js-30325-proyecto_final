@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linkeo con Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <!-- Linkeo con CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Fuentes de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <a href="./index.html"><button class="btn btn-success" id="volverPrincipal">Volver al menú principal</button></a>
+
+        <!-- <button class="btn btn-success" id="borrarPersonas">Borrar</button> Este botón lo hice en un principio para poder borrar el Array Persona -->
+
+    </div>
+
+    <h1>Detalle de tu compra</h1>
+
+    <h3 id="noHayProductos"></h3>
+    <table class="table tablitaCompra">
+        <thead>
+            <tr>
+                <th class="productoTabla" scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Unidades</th>
+                <th scope="col">Precio Total x Producto</th>
+            </tr>
+        </thead>
+        <tbody id="detalleCompra"></tbody>
+        <tbody>
+            <td colspan="3"> <h4>Subtotal Final:</h4> </td>
+            <td> <h4 id="subTotalApagar">0</h4> </td>
+        </tbody>
+    </table>
+    
+    <div>
+        
+        <div class="despachoPago">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated progress1 bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+            </div>
+            <p><button class="btn btn-success btnPaso1Compra" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                <h3>PASO 1: Elegir forma de envío:</h3>
+            </button></p>
+            <div class="collapse" id="collapseExample1">
+                <div class="card card-body">
+                    <div id="grupoEnvios"></div>
+                    <h4 id="precioEnvio"> </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="codigoDescuento">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated progress2 bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+            </div>
+            <p><button class="btn btn-success btnPaso2Compra" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                <h3>PASO 2: Insertar Código de Descuento:</h3>
+            </button></p>
+            <div class="collapse" id="collapseExample2">
+                <div class="card card-body">
+                    <input type="text" placeholder="Ingrese su código de descuento" id="validacionCodigo">
+                    <div>
+                        <button class="btn btn-success" id="confirmarDescuento">Confirmar</button>
+                        <button class="btn btn-success" id="noConfirmarDescuento">No tengo código de Descuento</button>
+                    </div>
+                    <h4 id="descuentoValor"></h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="formUsuario">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated progress3 bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+            <p><button class="btn btn-success btnPaso3Compra" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                <h3>PASO 3: Introducir Datos de compra:</h3>
+            </button></p>
+            <div class="collapse" id="collapseExample3">
+                <div class="card card-body">
+
+                    <div>
+
+                        <input class="btn btn-success" id="btnRegistrarse" type="button" onclick="mostrarRegistrarse(this)" value="Registrarse">
+            
+                        <input class="btn btn-success" id="btnYaTengoUsuario" type="button" onclick="mostrarYaTengoUsuario(this)" value="Ya tengo Usuario">
+
+                    </div>
+
+                    <form id="registrarse">
+                        <fieldset>
+                            <legend>A continuación ingrese los datos del comprador:</legend>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" required="required" name="nombre" id="nombre">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" required="required" name="apellido" id="apellido">
+                            <label for="dni">DNI:</label>
+                            <input type="number" required="required" name="dni" id="dni">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" required="required" name="correo" id="correo">
+                            <label for="domicilio">Domicilio:</label>
+                            <input type="text" required="required" name="domicilio" id="domicilio">
+                            <label for="cp">Código Postal:</label>
+                            <input type="number" required="required" name="cp" id="cp">
+                            <input type="submit" class="btn btn-success" id="nUsuario" value="Registrarse">
+                        </fieldset>
+                        <input type="button" class="btn btn-success" id="terminosYcondiciones1" value="Continuar">
+                    </form>
+                    
+                    <form id="yaTengoUsuario">
+                        <label for="dni">DNI</label>
+                        <input type="number" name="dni" id="dniBuscar">
+                        <button class="btn btn-success" id="btnBuscarUsuario">Buscar</button>
+                        <div id="personaEncontrada"></div>
+                        <input type="button" class="btn btn-success" id="terminosYcondiciones2" value="Continuar">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="formasPago">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated progress4 bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+            </div>
+            <p><button class="btn btn-success btnPaso4Compra" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                <h3>PASO 4: Seleccionar Forma de Pago:</h3>
+            </button></p>
+            <div class="collapse" id="collapseExample4">
+                <div class="card card-body">
+                    <h3>Su saldo a pagar es: <span id="saldoFinalApagar">0</span></h3>
+                    <div class="botonesPago">
+                        <input class="btn btn-success" id="btnTransferencia" type="button" onclick="mostrarTransferencia(this)" value="Depósito o Transferencia">
+                    
+                        <input class="btn btn-success" id="btnTarjeta" type="button" onclick="mostrarTarjeta(this)" value="Tarjeta de crédito">
+                    </div>
+                
+                    <div id="pagoTransferencia">
+                        <h4>Datos bancarios</h4>
+                        <h5>Para realizar Transferencia o Depósito bancario:</h5>
+                        <ul>
+                            <li><h5>Compu Mundo Hiper Mega Red SA</h5></li>
+                            <li>CUIT: 30-12345678-9</li>
+                            <li>Banco Galicia</li>
+                            <li>Nro de Cuenta en Pesos: 123/45678 9</li>
+                            <li>Sucursal: 000 Casa Matriz</li>
+                            <li>CBU: 0071234567891011121314</li>
+                        </ul>
+                        <p>Una vez realizada la transferencia le pedimos registre el comprobante correspondiente:</p>
+                        <button class="yaPague btn btn btn-success">Ya realicé el pago</button>
+                        <button class="muchasGracias btn btn btn-success">Finalizar Operación</button>
+                    </div>
+                    
+                    <div id="pagoTarjeta">
+                        <div class="contenedorTjt">
+                            <!-- Tarjeta -->
+                            <section class="tarjeta" id="tarjeta">
+                                <div class="delantera">
+                                    <div class="logo-marca" id="logo-marca">
+                                        <!-- <img src="img/logos/visa.png" alt=""> -->
+                                    </div>
+                                    <img src="img/otros/tarjeta/chip-tarjeta.png" class="chip" alt="">
+                                    <div class="datos">
+                                        <div class="grupo" id="numero">
+                                            <p class="label">Número Tarjeta</p>
+                                            <p class="numero">#### #### #### ####</p>
+                                        </div>
+                                        <div class="flexbox">
+                                            <div class="grupo" id="nombre">
+                                                <p class="label">Nombre Tarjeta</p>
+                                                <p class="nombre">River Plate</p>
+                                            </div>
+                                        
+                                            <div class="grupo" id="expiracion">
+                                                <p class="label">Expiracion</p>
+                                                <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="trasera">
+                                    <div class="barra-magnetica"></div>
+                                    <div class="datos">
+                                        <div class="grupo" id="firma">
+                                            <p class="label">Firma</p>
+                                            <div class="firma"><p></p></div>
+                                        </div>
+                                        <div class="grupo" id="ccv">
+                                            <p class="label">CCV</p>
+                                            <p class="ccv"></p>
+                                        </div>
+                                    </div>
+                                    <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+                                    <a href="#" class="link-banco">www.tubanco.com</a>
+                                </div>
+                            </section>
+                        
+                            <!-- Contenedor Boton Abrir Formulario -->
+                            <div class="contenedor-btn">
+                                <button class="btn-abrir-formulario btn btn btn-success" id="btn-abrir-formulario">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        
+                            <!-- Formulario -->
+                            <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+                                <div class="grupo">
+                                    <label for="inputNumero">Número Tarjeta</label>
+                                    <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                                </div>
+                                <div class="grupo">
+                                    <label for="inputNombre">Nombre</label>
+                                    <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+                                </div>
+                                <div class="flexbox">
+                                    <div class="grupo expira">
+                                        <label for="selectMes">Expiracion</label>
+                                        <div class="flexbox">
+                                            <div class="grupo-select">
+                                                <select name="mes" id="selectMes">
+                                                    <option disabled selected>Mes</option>
+                                                </select>
+                                                <i class="fas fa-angle-down"></i>
+                                            </div>
+                                            <div class="grupo-select">
+                                                <select name="year" id="selectYear">
+                                                    <option disabled selected>Año</option>
+                                                </select>
+                                                <i class="fas fa-angle-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="grupo ccv">
+                                        <label for="inputCCV">CCV</label>
+                                        <input type="text" id="inputCCV" maxlength="3">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-enviar yaPague2 btn btn btn-success">Enviar</button>
+                                <input type="button" class="muchasGracias2 btn btn btn-success" value="Finalizar Operación">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    
+    
+    <!-- Linkeo con archivos JavaScript -->
+    <!-- <script src="stock.js"></script> -->
+    <script src="js/modal.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/compra.js"></script>
+
+    <!-- Linkeo con Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Linkeo con Librerías -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+
+    
+
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linkeo con Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Linkeo con CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Fuentes de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <title>Proyecto Final JS - Pablo Agustín Rey</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <header class="fixed-top">
+            <div class="primerTerminoHeader">
+
+                <img id="homero" class="logo-empresa" src="./img/otros/logo-empresa.png" alt="logo Compu Mundo Hiper Mega Red">
+
+                <h1>Compu Mundo Hiper Mega RED</h1>
+            
+                <button id="boton-carrito"><i><img src="./img/iconos/carrito.png" alt="botón carrito"></i><span id="contadorCarrito">0</span></button>
+            </div>
+        </header>
+
+        <main class="mainIndex">
+            <div class="mainHeader">
+                <div class="seleccion">
+                    <select id="selectProductos">
+                        <option value="all">Todos</option>
+                        <option value="Procesador">Procesadores</option>
+                        <option value="Motherboard">Motherboard</option>
+                        <option value="Memoria RAM">Memorias RAM</option>
+                        <option value="Placa de Video">Placas de Video</option>
+                        <option value="Almacenamiento">Almacenamiento</option>
+                        <option value="Fuente de alimentacion">Fuentes de alimentación</option>
+                        <option value="Gabinete">Gabinetes</option>
+                    </select>
+                    <button class="btn btn-success" id="botoncito">Filtro</button>
+                </div>
+
+                <input id="search" type="text" class="input" placeholder=" Buscar producto por su nombre">
+            </div>
+
+            <div>
+                <div class="row" id="contenedor-productos">
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="fixed-bottom">
+                <div class="col-1 logoPR">
+                    <a href="https://github.com/prey14/" target="_blank">
+                        <span>
+                            <img src="./img/otros/PRlogo.png" alt="logoPR">
+                        </span>
+                    </a>
+                </div>
+                <div class="col-8">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, officiis est recusandae ad fugit voluptas.</p>
+                </div>
+                <div class="col-3 redes">
+                    <ul>
+                        <li><a href="http://www.instagram.com" target="_blank"><img src="./img/iconos/iconoInstagram.png" alt="icono de instagram"></a></li>
+                        <li><a href="http://www.facebook.com" target="_blank"><img src="./img/iconos/iconoFacebook.png" alt="icono de facebook"></a></li>
+                        <li><a href="http://www.whatsapp.com" target="_blank"><img src="./img/iconos/iconoWhatsapp.png" alt="icono de whatsapp"></a></li>
+                    </ul>
+                </div>
+        </footer>
+
+    </div>
+
+    <!-- Acá está el modal que después voy a tratar de mejorar HASTA ACÁ!!!-->
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Detalle de su compra:</h3>
+            <button id="carritoCerrar"><i><img src="./img/iconos/cerrar.png" alt="boton cerrar"></i></button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <!-- <th scope="col">Id</th> -->
+                        <th class="productoTabla" scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Unidades</th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody id="carrito-contenedor">
+
+                </tbody>
+            </table>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            <a href="./compra.html"><button id="carritoComprar" class="btn btn-success">Finalizar Compra</button></a>
+            <button id="carritoVaciar" class="btn btn-success">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <!-- Linkeo con archivos JavaScript -->
+    <script src="js/modal.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/compra.js"></script>
+
+    <!-- Linkeo con Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Linkeo con Librerías -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+</html>
