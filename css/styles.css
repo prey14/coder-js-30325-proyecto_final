@@ -29,7 +29,7 @@ body{
 }
 
 /* Estilos del HEADER */
-header{
+.headerIndex{
     height: 15vh;
     background-color: #198754;
     max-width: 100%;
@@ -138,7 +138,7 @@ header h1{
 
 
 /* Estilos del FOOTER */
-footer{
+.footerIndex{
     bottom: 10vh;
     height: 15vh;
     background-color: rgb(180, 226, 174);
@@ -153,7 +153,7 @@ footer{
     transform: scale(1.2);
     transition: all 0.5s;
 }
-footer p{
+.footerIndex p{
     margin-top: 12px;
 }
 .redes ul{
@@ -306,13 +306,13 @@ th, td{
     text-align: start;
 }
 
-
-
-
-
-
+.headerCompra h2{
+    color: white;
+}
 
 /* ---------------------- */
+
+
 
 
 /* Estilos de tarjeta de crédito: */

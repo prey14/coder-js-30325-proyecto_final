@@ -21,35 +21,34 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <div>
+    <header class="headerCompra">
         <a href="./index.html"><button class="btn btn-success" id="volverPrincipal">Volver al menú principal</button></a>
-
         <!-- <button class="btn btn-success" id="borrarPersonas">Borrar</button> Este botón lo hice en un principio para poder borrar el Array Persona -->
+        <div>
+            <h1>Detalle de tu compra</h1>
+            <h2 id="noHayProductos"></h2>
+        </div>
+    </header>
 
-    </div>
 
-    <h1>Detalle de tu compra</h1>
+    <main class="mainCompra">
 
-    <h3 id="noHayProductos"></h3>
-    <table class="table tablitaCompra">
-        <thead>
-            <tr>
-                <th class="productoTabla" scope="col">Producto</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Unidades</th>
-                <th scope="col">Precio Total x Producto</th>
-            </tr>
-        </thead>
-        <tbody id="detalleCompra"></tbody>
-        <tbody>
-            <td colspan="3"> <h4>Subtotal Final:</h4> </td>
-            <td> <h4 id="subTotalApagar">0</h4> </td>
-        </tbody>
-    </table>
+        <table class="table tablitaCompra">
+            <thead>
+                <tr>
+                    <th class="productoTabla" scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Unidades</th>
+                    <th scope="col">Precio Total x Producto</th>
+                </tr>
+            </thead>
+            <tbody id="detalleCompra"></tbody>
+            <tbody>
+                <td colspan="3"> <h4>Subtotal Final:</h4> </td>
+                <td> <h4 id="subTotalApagar">0</h4> </td>
+            </tbody>
+        </table>
     
-    <div>
-        
         <div class="despachoPago">
             <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated progress1 bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
@@ -262,12 +261,12 @@
             </div>
         </div>
 
-    </div>
+    </main>
 
-    
+    <footer class="footerCompra">
 
-    
-    
+    </footer>
+
     <!-- Linkeo con archivos JavaScript -->
     <!-- <script src="stock.js"></script> -->
     <script src="js/modal.js"></script>

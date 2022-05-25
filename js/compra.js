@@ -262,10 +262,6 @@ function nuevoUsuario (val){
 
 function buscarUsuario(val){
     val.preventDefault();
-
-    const arrayEjemplo = {nombre: "Pablo", apellido: "Rey", dni: 09122018, correo: "pablo@gmail.com", domicilio: "CABA", cp: "1406"};
-    arrayPersonas.push(arrayEjemplo);
-    localStorage.setItem("arrayPersonas", JSON.stringify(arrayPersonas));
     
     const dniBuscar = document.querySelector("#dniBuscar").value;
     const arrayParaBuscar = JSON.parse(localStorage.getItem("arrayPersonas"));
