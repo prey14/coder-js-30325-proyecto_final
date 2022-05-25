@@ -139,7 +139,7 @@ header h1{
 
 /* Estilos del FOOTER */
 .footerIndex{
-    bottom: 10vh;
+    bottom: 0vh;
     height: 15vh;
     background-color: rgb(180, 226, 174);
     display: flex;

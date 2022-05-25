@@ -34,13 +34,13 @@ function detalleFinal(){
             tr.classList.add("productoEnCarrito");
             detalleCompra.innerHTML += `
                 <td class="productoTabla"> ${nombre} </td>
-                <td> ${precio} </td>
+                <td> $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio)} </td>
                 <td> ${cantidad} </td>
-                <td> ${precio * cantidad} </td>
+                <td> $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio * cantidad)} </td>
             `
         });
-        subTotalApagar = (ls.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0));
-        document.querySelector("#subTotalApagar").innerText = subTotalApagar;
+        subTotalApagar = (Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(ls.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0)));
+        document.querySelector("#subTotalApagar").innerText = `$${subTotalApagar}`;
         btnPasosCompra2.disabled = true;
         btnPasosCompra3.disabled = true;
         btnPasosCompra4.disabled = true;
@@ -113,7 +113,7 @@ function codigoDescuento(){
             });
 
             let valorDescuento = (ls.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0) * 0.20);
-            document.querySelector("#descuentoValor").innerText = `¡¡FELICITACIONES!! Obtuviste un descuento del 20% sobre el subtotal de tu compra: $${valorDescuento}.-`;
+            document.querySelector("#descuentoValor").innerText = `¡¡FELICITACIONES!! Obtuviste un descuento del 20% sobre el subtotal de tu compra: $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(valorDescuento)}.-`;
             btnPasosCompra3.disabled = false;
             btnPasosCompra4.disabled = true;
             validacionCodigo.disabled = true;
@@ -168,7 +168,7 @@ function codigoDescuento(){
         document.querySelector(".progress4").style.display="none";
 
         let subTotalApagar = (ls.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0));
-        document.querySelector("#saldoFinalApagar").innerText = (subTotalApagar + precioEnvio);
+        document.querySelector("#saldoFinalApagar").innerText = `$${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format((subTotalApagar + precioEnvio))}.-`;
 
         document.querySelector("#flexRadioDefault1").disabled = true;
         document.querySelector("#flexRadioDefault2").disabled = true;
