@@ -54,85 +54,92 @@ function mostrarProductosFiltro(array){
     });
 };
 
+
 const filtro = () => {
-    botoncitoFiltro.addEventListener("click",() => {
-        if(selectProductos.value === "all"){
-            mostrarProductosFiltro(stockGlobal);
-        } else{
-            mostrarProductosFiltro(stockGlobal.filter(elemento => elemento.tipo === selectProductos.value));
-        }
-    })
+    if(botoncitoFiltro){
+        botoncitoFiltro.addEventListener("click",() => {
+            if(selectProductos.value === "all"){
+                mostrarProductosFiltro(stockGlobal);
+            } else{
+                mostrarProductosFiltro(stockGlobal.filter(elemento => elemento.tipo === selectProductos.value));
+            }
+        })
+    }
 }
 filtro();
 
 
 // buscador
 const buscador = () => {
-    search.addEventListener("keyup",()=>{
-        contenedorProductos.innerHTML = "";  
-        let texto = search.value.toLowerCase();
-        
-        fetch("./js/stock.json")
-        .then((response) => response.json())
-        .then((stock) => {
-            stock.forEach(({id,nombre,tipo,info,precio,img}) => {
-                let name = nombre.toLowerCase();
-                if(name.indexOf(texto) !== -1){
-                    let div = document.createElement("div");
-                    div.classList.add("producto","col");
-                    div.innerHTML += `
-                    <div class="card" style="width: 42rem;">
-                        <img src=${img} class="card-img-top" alt="${tipo} ${nombre}">
-                        <div class="card-body">
-                            <h5 class="card-title">${nombre}</h5>
-                            <p class="card-text">${info}</p>
-                            <p>Precio: $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio)}.-</p>
-                            <a id="agregar${id}" class="btn btn-success btnAgregar">Agregar al carrito <i><img src="./img/iconos/agregarB.png" alt="ícono de Agregar Carrito"></i></a>
+    if(search){
+        search.addEventListener("keyup",()=>{
+            contenedorProductos.innerHTML = "";  
+            let texto = search.value.toLowerCase();
+            
+            fetch("./js/stock.json")
+            .then((response) => response.json())
+            .then((stock) => {
+                stock.forEach(({id,nombre,tipo,info,precio,img}) => {
+                    let name = nombre.toLowerCase();
+                    if(name.indexOf(texto) !== -1){
+                        let div = document.createElement("div");
+                        div.classList.add("producto","col");
+                        div.innerHTML += `
+                        <div class="card" style="width: 42rem;">
+                            <img src=${img} class="card-img-top" alt="${tipo} ${nombre}">
+                            <div class="card-body">
+                                <h5 class="card-title">${nombre}</h5>
+                                <p class="card-text">${info}</p>
+                                <p>Precio: $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio)}.-</p>
+                                <a id="agregar${id}" class="btn btn-success btnAgregar">Agregar al carrito <i><img src="./img/iconos/agregarB.png" alt="ícono de Agregar Carrito"></i></a>
+                            </div>
                         </div>
-                    </div>
-                    `;
-                    contenedorProductos.appendChild(div);
-                    let botonAgregar = document.getElementById(`agregar${id}`);
-                    botonAgregar.addEventListener("click",() => {
-                        agregarAlCarrito(id);
-                    });
-                };
-            });
-            contenedorProductos.innerHTML === "" && (contenedorProductos.innerHTML += `<h3>Lo sentimos. Ese producto no lo tenemos a la venta...</h3>`);
-        });
-    });
-}
+                        `;
+                        contenedorProductos.appendChild(div);
+                        let botonAgregar = document.getElementById(`agregar${id}`);
+                        botonAgregar.addEventListener("click",() => {
+                            agregarAlCarrito(id);
+                        })
+                    }
+                })
+                contenedorProductos.innerHTML === "" && (contenedorProductos.innerHTML += `<h3>Lo sentimos. Ese producto no lo tenemos a la venta...</h3>`);
+            })
+        })
+    }
+};
 buscador();
 
 
 // Ecommerce:
 
 function mostrarProductos () {
-    contenedorProductos.innerHTML = "";
-    fetch("./js/stock.json")
-    .then((response) => response.json())
-    .then((stock) => {
-        stock.forEach(({id,nombre,tipo,info,precio,img}) => {
-            let div = document.createElement("div");
-            div.classList.add("producto","col");
-            div.innerHTML += `
-            <div class="card" style="width: 42rem;">
-                <img src=${img} class="card-img-top" alt="${tipo} ${nombre}">
-                <div class="card-body">
-                    <h5 class="card-title">${nombre}</h5>
-                    <p class="card-text">${info}</p>
-                    <p>Precio: $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio)}.-</p>
-                    <a id="agregar${id}" class="btn btn-success btnAgregar">Agregar al carrito <i><img src="./img/iconos/agregarB.png" alt="ícono de Agregar Carrito"></i></a>
+    if(contenedorProductos){
+        contenedorProductos.innerHTML = "";
+        fetch("./js/stock.json")
+        .then((response) => response.json())
+        .then((stock) => {
+            stock.forEach(({id,nombre,tipo,info,precio,img}) => {
+                let div = document.createElement("div");
+                div.classList.add("producto","col");
+                div.innerHTML += `
+                <div class="card" style="width: 42rem;">
+                    <img src=${img} class="card-img-top" alt="${tipo} ${nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title">${nombre}</h5>
+                        <p class="card-text">${info}</p>
+                        <p>Precio: $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio)}.-</p>
+                        <a id="agregar${id}" class="btn btn-success btnAgregar">Agregar al carrito <i><img src="./img/iconos/agregarB.png" alt="ícono de Agregar Carrito"></i></a>
+                    </div>
                 </div>
-            </div>
-            `;
-            contenedorProductos.appendChild(div);
-            let btnAgregar = document.getElementById(`agregar${id}`);
-            btnAgregar.addEventListener("click",() => {
-                agregarAlCarrito(id);
-            });
-        });
-    });
+                `;
+                contenedorProductos.appendChild(div);
+                let btnAgregar = document.getElementById(`agregar${id}`);
+                btnAgregar.addEventListener("click",() => {
+                    agregarAlCarrito(id);
+                })
+            })
+        })
+    }
 };
 
 function agregarAlCarrito(id){
@@ -162,27 +169,31 @@ function mostrarCarrito(productoAgregar){
         <td id="und${productoAgregar.id}">${productoAgregar.cantidad}</td>
         <td><button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i><img src="./img/iconos/basura.png" alt="ícono de Basura"></i></button></td>
     `;
-    contenedorCarrito.appendChild(tr);
-    let btnEliminar = document.getElementById(`eliminar${productoAgregar.id}`);
-    btnEliminar.addEventListener("click",() => {
-        if(productoAgregar.cantidad == 1){
-            btnEliminar.parentElement.parentElement.remove();
-            carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != productoAgregar.id);
-            actualizarCarrito();
-            localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
-        }else{
-            productoAgregar.cantidad --;
-            document.getElementById(`und${productoAgregar.id}`).innerHTML =` <td id=und${productoAgregar.id}>${productoAgregar.cantidad}</td>`;
-            actualizarCarrito();
-            localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
-        }
-        toastHomero();
-    });
+    if(contenedorCarrito){
+        contenedorCarrito.appendChild(tr);
+        let btnEliminar = document.getElementById(`eliminar${productoAgregar.id}`);
+        btnEliminar.addEventListener("click",() => {
+            if(productoAgregar.cantidad == 1){
+                btnEliminar.parentElement.parentElement.remove();
+                carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != productoAgregar.id);
+                actualizarCarrito();
+                localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
+            }else{
+                productoAgregar.cantidad --;
+                document.getElementById(`und${productoAgregar.id}`).innerHTML =` <td id=und${productoAgregar.id}>${productoAgregar.cantidad}</td>`;
+                actualizarCarrito();
+                localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
+            }
+            toastHomero();
+        });
+    };
 };
 
 function actualizarCarrito(){
-    contadorCarrito.innerText = carritoDeCompras.reduce((acumulador,elemento) => acumulador + elemento.cantidad, 0)
-    precioTotal.innerText = Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(carritoDeCompras.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0)) + ".-";
+    if(contadorCarrito){
+        contadorCarrito.innerText = carritoDeCompras.reduce((acumulador,elemento) => acumulador + elemento.cantidad, 0)
+        precioTotal.innerText = Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(carritoDeCompras.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0)) + ".-";
+    }
 };
 
 function recuperar(){

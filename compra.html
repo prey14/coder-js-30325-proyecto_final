@@ -18,7 +18,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Página de compra</title>
 </head>
 <body>
     <header class="headerCompra">
@@ -222,24 +222,24 @@
                             <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
                                 <div class="grupo">
                                     <label for="inputNumero">Número Tarjeta</label>
-                                    <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                                    <input type="text" required="required" id="inputNumero" maxlength="19" autocomplete="off">
                                 </div>
                                 <div class="grupo">
                                     <label for="inputNombre">Nombre</label>
-                                    <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+                                    <input type="text" required="required" id="inputNombre" maxlength="19" autocomplete="off">
                                 </div>
                                 <div class="flexbox">
                                     <div class="grupo expira">
                                         <label for="selectMes">Expiracion</label>
                                         <div class="flexbox">
                                             <div class="grupo-select">
-                                                <select name="mes" id="selectMes">
+                                                <select name="mes" required="required" id="selectMes">
                                                     <option disabled selected>Mes</option>
                                                 </select>
                                                 <i class="fas fa-angle-down"></i>
                                             </div>
                                             <div class="grupo-select">
-                                                <select name="year" id="selectYear">
+                                                <select name="year" required="required" id="selectYear">
                                                     <option disabled selected>Año</option>
                                                 </select>
                                                 <i class="fas fa-angle-down"></i>
@@ -249,10 +249,10 @@
                                 
                                     <div class="grupo ccv">
                                         <label for="inputCCV">CCV</label>
-                                        <input type="text" id="inputCCV" maxlength="3">
+                                        <input type="text" required="required" id="inputCCV" maxlength="3">
                                     </div>
                                 </div>
-                                <button type="button" class="btn-enviar yaPague2 btn btn btn-success">Enviar</button>
+                                <input type="submit" class="btn-enviar yaPague2 btn">Enviar</input>
                                 <input type="button" class="muchasGracias2 btn btn btn-success" value="Finalizar Operación">
                             </form>
                         </div>

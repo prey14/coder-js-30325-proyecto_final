@@ -1,49 +1,43 @@
 
 
+// Detalle de la Compra:
+
 const detalleCompra = document.querySelector("#detalleCompra");
 
-
 let ls = JSON.parse(localStorage.getItem("carrito"));
-
-
-
-const btnPasosCompra1 = document.querySelector(".btnPaso1Compra");
-const btnPasosCompra2 = document.querySelector(".btnPaso2Compra");
-const btnPasosCompra3 = document.querySelector(".btnPaso3Compra");
-const btnPasosCompra4 = document.querySelector(".btnPaso4Compra");
-
-
 let subTotalApagar = 0;
-//(ls.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0));
 let precioEnvio = 0;
 
 function detalleFinal(){
     if(ls == 0 || ls == null || ls == undefined){
-        btnPasosCompra1.disabled = true;
-        btnPasosCompra2.disabled = true;
-        btnPasosCompra3.disabled = true;
-        btnPasosCompra4.disabled = true;
+
+        document.querySelector(".btnPaso1Compra").disabled = true;
+        document.querySelector(".btnPaso2Compra").disabled = true;
+        document.querySelector(".btnPaso3Compra").disabled = true;
+        document.querySelector(".btnPaso4Compra").disabled = true;
         document.querySelector(".progress1").style.display="none";
         document.querySelector(".progress2").style.display="none";
         document.querySelector(".progress3").style.display="none";
         document.querySelector(".progress4").style.display="none";
-        document.querySelector("#noHayProductos").innerText = `No seleccionaste ningún producto`
+        document.querySelector("#noHayProductos").innerText = `No seleccionaste ningún producto`;
     }else{
         ls.forEach(({nombre,precio,cantidad}) => {
             let tr = document.createElement("tr");
             tr.classList.add("productoEnCarrito");
-            detalleCompra.innerHTML += `
-                <td class="productoTabla"> ${nombre} </td>
-                <td> $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio)} </td>
-                <td> ${cantidad} </td>
-                <td> $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio * cantidad)} </td>
-            `
+            if(detalleCompra){
+                detalleCompra.innerHTML += `
+                    <td class="productoTabla"> ${nombre} </td>
+                    <td> $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio)} </td>
+                    <td> ${cantidad} </td>
+                    <td> $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(precio * cantidad)} </td>
+                `;
+            };
         });
         subTotalApagar = (Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(ls.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0)));
         document.querySelector("#subTotalApagar").innerText = `$${subTotalApagar}`;
-        btnPasosCompra2.disabled = true;
-        btnPasosCompra3.disabled = true;
-        btnPasosCompra4.disabled = true;
+        document.querySelector(".btnPaso2Compra").disabled = true;
+        document.querySelector(".btnPaso3Compra").disabled = true;
+        document.querySelector(".btnPaso4Compra").disabled = true;
         document.querySelector(".progress2").style.display="none";
         document.querySelector(".progress3").style.display="none";
         document.querySelector(".progress4").style.display="none";
@@ -52,39 +46,48 @@ function detalleFinal(){
 detalleFinal();
 
 
+//TODO:-------------------------------------------------->
 
-// PASO Nro 1:
+
+//! PASO Nro 1:
+
 const envios = [{input: "Retiro en el local (Sin costo)", valor: 0, id: "flexRadioDefault1"}, {input: "Envío por Correo Argentino", valor: 500, id: "flexRadioDefault2"}, {input: "Envío por Mensajería Privada", valor: 1000, id: "flexRadioDefault3"}];
      
 const grupoEnvios = document.querySelector("#grupoEnvios");
+
 grupoEnvios.innerHTML = envios.map((elemento) => `
-    <div>
-        <input type="radio" name="envio" value="${elemento.valor}" id="${elemento.id}"> <label for="${elemento.id}">${elemento.input}</label>
-    </div>
+<div>
+<input type="radio" name="envio" value="${elemento.valor}" id="${elemento.id}"> <label for="${elemento.id}">${elemento.input}</label>
+</div>
 `).join(" ");
+
 
 const btnsRadio = document.querySelectorAll('input[name="envio"]');
 for(const btnRadio of btnsRadio){
     btnRadio.addEventListener("change", mostrarEnvio);
-}
+};
 
-function mostrarEnvio() {
+function mostrarEnvio(){
     if (this.checked) {
         document.querySelector("#precioEnvio").innerText = `La forma de envío seleccionada tiene un costo de: $${this.value}.-`;
 
         precioEnvio = parseInt(this.value);
 
-        btnPasosCompra2.disabled = false;
-        btnPasosCompra3.disabled = true;
-        btnPasosCompra4.disabled = true;
+        document.querySelector(".btnPaso2Compra").disabled = false;
+        document.querySelector(".btnPaso3Compra").disabled = true;
+        document.querySelector(".btnPaso4Compra").disabled = true;
         document.querySelector(".progress1").style.display="none";
         document.querySelector(".progress2").style="width: 50%";
         document.querySelector(".progress3").style.display="none";
         document.querySelector(".progress4").style.display="none";
     }
-}
+};
 
-// PASO Nro 2:
+
+//?-------------------------------------------------->
+
+
+//! PASO Nro 2:
 
 const validacionCodigo = document.querySelector("#validacionCodigo");
 let valorDescuento = 0;
@@ -114,8 +117,8 @@ function codigoDescuento(){
 
             let valorDescuento = (ls.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0) * 0.20);
             document.querySelector("#descuentoValor").innerText = `¡¡FELICITACIONES!! Obtuviste un descuento del 20% sobre el subtotal de tu compra: $${Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format(valorDescuento)}.-`;
-            btnPasosCompra3.disabled = false;
-            btnPasosCompra4.disabled = true;
+            document.querySelector(".btnPaso3Compra").disabled = false;
+            document.querySelector(".btnPaso4Compra").disabled = true;
             validacionCodigo.disabled = true;
             document.querySelector("#collapseExample1").disabled = true;
             document.querySelector("#confirmarDescuento").disabled = true;
@@ -130,7 +133,7 @@ function codigoDescuento(){
     
             subTotalApagar = (ls.reduce((acumulador,elemento) => acumulador + (elemento.precio * elemento.cantidad), 0));
             
-            document.querySelector("#saldoFinalApagar").innerText = (subTotalApagar - valorDescuento + precioEnvio);
+            document.querySelector("#saldoFinalApagar").innerText = "$" + Intl.NumberFormat({ style: 'currency', currency: 'ARS' }).format((subTotalApagar - valorDescuento + precioEnvio)) + ".-";
         } else{
             Toast = Swal.mixin({
                 toast: true,
@@ -157,8 +160,8 @@ function codigoDescuento(){
             icon: "warning",
             title: "Lo sentimos, no accediste a ningún descuento"
         })
-        btnPasosCompra3.disabled = false;
-        btnPasosCompra4.disabled = true;
+        document.querySelector(".btnPaso3Compra").disabled = false;
+        document.querySelector(".btnPaso4Compra").disabled = true;
         validacionCodigo.disabled = true;
         document.querySelector("#confirmarDescuento").disabled = true;
         document.querySelector("#noConfirmarDescuento").disabled = true;
@@ -175,17 +178,14 @@ function codigoDescuento(){
         document.querySelector("#flexRadioDefault3").disabled = true;
         
     })
-}
+};
 codigoDescuento();
 
 
+//?-------------------------------------------------->
 
 
-
-
-// PASO Nro 3:
-
-
+//! PASO Nro 3:
 
 let btnRegistrarse = document.querySelector("#btnRegistrarse");
 let btnYaTengoUsuario = document.querySelector("#btnYaTengoUsuario");
@@ -195,7 +195,7 @@ let yaTengoUsuario = document.querySelector("#yaTengoUsuario");
 let terminosYcondiciones1 = document.querySelector("#terminosYcondiciones1");
 let terminosYcondiciones2 = document.querySelector("#terminosYcondiciones2");
 
-
+const arrayPersonas = [];
 
 function mostrarRegistrarse(input){
     if(input.value == "Registrarse") {
@@ -207,7 +207,7 @@ function mostrarRegistrarse(input){
         input.value="Registrarse";
         btnYaTengoUsuario.disabled = false;
     }
-}
+};
 
 function mostrarYaTengoUsuario(input){
     if(input.value == "Ya tengo Usuario") {
@@ -219,13 +219,10 @@ function mostrarYaTengoUsuario(input){
         input.value="Ya tengo Usuario";
         btnRegistrarse.disabled = false;
     }
-}
-
-const arrayPersonas = [];
+};
 
 document.querySelector("#registrarse").addEventListener("submit", nuevoUsuario);
 function nuevoUsuario (val){
-
     val.preventDefault();
 
     const nombre = document.querySelector("#nombre").value;
@@ -258,7 +255,7 @@ function nuevoUsuario (val){
         icon: 'success',
         title: 'Usuario registrado con Éxito!'
     })
-}
+};
 
 function buscarUsuario(val){
     val.preventDefault();
@@ -280,11 +277,12 @@ function buscarUsuario(val){
 }
 document.querySelector("#btnBuscarUsuario").addEventListener("click", buscarUsuario);
 
-
-//! Este botón lo dejé por si quisiera borrar más facilmente los usuarios del localStorage
-// document.querySelector("#borrarPersonas").addEventListener("click", ()=>{
-//     localStorage.removeItem("arrayPersonas");
-// })
+/*
+Este botón lo dejé por si quisiera borrar más facilmente los usuarios del localStorage
+* document.querySelector("#borrarPersonas").addEventListener("click", ()=>{
+*     localStorage.removeItem("arrayPersonas");
+* });
+*/
 
 document.querySelector("#terminosYcondiciones1").addEventListener("click", async ()=>{
     const { value: accept } = await Swal.fire({
@@ -304,7 +302,8 @@ document.querySelector("#terminosYcondiciones1").addEventListener("click", async
     }
     btnYaTengoUsuario.disabled = true;
     document.querySelector("#terminosYcondiciones1").disabled = true;
-    btnPasosCompra4.disabled = false;
+    document.querySelector(".btnPaso4Compra").disabled = false;
+    btnBuscarUsuario.disabled = true;
     document.querySelector(".progress1").style.display="none";
     document.querySelector(".progress2").style.display="none";
     document.querySelector(".progress3").style.display="none";
@@ -329,7 +328,8 @@ document.querySelector("#terminosYcondiciones2").addEventListener("click", async
     }
     btnYaTengoUsuario.disabled = true;
     document.querySelector("#terminosYcondiciones2").disabled = true;
-    btnPasosCompra4.disabled = false;
+    document.querySelector(".btnPaso4Compra").disabled = false;
+    btnBuscarUsuario.disabled = true;
     document.querySelector(".progress1").style.display="none";
     document.querySelector(".progress2").style.display="none";
     document.querySelector(".progress3").style.display="none";
@@ -337,9 +337,10 @@ document.querySelector("#terminosYcondiciones2").addEventListener("click", async
 })
 
 
+//?-------------------------------------------------->
 
 
-// PASO Nro 4:
+//! PASO Nro 4:
 
 let pagoTransferencia = document.getElementById("pagoTransferencia")
 let pagoTarjeta = document.getElementById("pagoTarjeta")
@@ -348,7 +349,6 @@ const btnTransferencia = document.querySelector("#btnTransferencia")
 const btnTarjeta = document.querySelector("#btnTarjeta")
 
 const botonesPago = document.querySelector(".botonesPago");
-
 
 function mostrarTransferencia(input){
     if(input.value == "Depósito o Transferencia") {
@@ -374,8 +374,8 @@ function mostrarTarjeta(input){
     }
 }
 
+//* Forma de pago: Depósito o transferencia:
 
-// Dposito o transferencia
 const yaPague = document.querySelector(".yaPague");
 const muchasGracias = document.querySelector(".muchasGracias");
 muchasGracias.disabled = true;
@@ -397,8 +397,11 @@ yaPague.addEventListener("click", async ()=>{
                 imageUrl: "./img/otros/homeroNerd.png",
                 imageWidth: 350,
                 imageHeight: 200,
-                imageAlt: 'imagen de homero nerd'
+                imageAlt: 'imagen de homero nerd',
+                
             })
+            btnTransferencia.disabled = true;
+            yaPague.disabled = true;
             muchasGracias.disabled = false;
             muchasGracias.addEventListener("click", ()=>{
                 carritoDeCompras.length = 0;
@@ -410,17 +413,16 @@ yaPague.addEventListener("click", async ()=>{
     }
 })
 
-
-
-
-
-//Tarjeta de crédito:
+//* Forma de pago: Tarjeta de crédito:
 
 const yaPague2 = document.querySelector(".yaPague2");
 const muchasGracias2 = document.querySelector(".muchasGracias2");
 muchasGracias2.disabled = true;
 
-yaPague2.addEventListener("click", ()=>{
+yaPague2.addEventListener("click", (val)=>{
+
+    val.preventDefault();
+
     Swal.fire({
         title: 'Su operación está siendo procesada. En las próximas 24hs usted recibirá un correo con la confirmación de la transacción. Muchas gracias!',
         imageUrl: "./img/otros/homeroNerd.png",
@@ -429,13 +431,14 @@ yaPague2.addEventListener("click", ()=>{
         imageAlt: 'imagen de homero nerd'
     })
     muchasGracias2.disabled = false;
+    btnTarjeta.disabled = true;
+    yaPague2.disabled = true;
     muchasGracias2.addEventListener("click", ()=>{
         carritoDeCompras.length = 0;
         localStorage.removeItem("carrito");
         window.location.href = "index.html";
     })
 })
-
 
 const tarjeta = document.querySelector('#tarjeta'),
 	  btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
@@ -530,7 +533,7 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 	firma.textContent = valorInput;
 
 	if(valorInput == ''){
-		nombreTarjeta.textContent = 'Jhon Doe';
+		nombreTarjeta.textContent = 'RIVER PLATE';
 	}
 
 	mostrarFrente();
@@ -562,5 +565,3 @@ formulario.inputCCV.addEventListener('keyup', () => {
 
 	ccv.textContent = formulario.inputCCV.value;
 });
-
-
